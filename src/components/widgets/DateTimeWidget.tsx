@@ -30,10 +30,11 @@ export const DateTimeWidget: React.FC = () => {
       const { clientWidth: w, clientHeight: h } = containerRef.current;
       // "HH:MM:SS AM": 6 digits(×0.56) + 2 colons(×0.22) + 7 gaps(×0.12) + ampm(~0.7) ≈ 5.22×H
       const fromW = (w * 0.88) / 5.22;
-      const fromH = h * (h > w * 0.55 ? 0.55 : 0.60);
-      const dh = Math.max(18, Math.floor(Math.min(fromW, fromH)));
+      // Reserve ~20% of height for date, adjust accordingly
+      const availableH = h * (h > w * 0.55 ? 0.45 : 0.50);
+      const dh = Math.max(18, Math.floor(Math.min(fromW, availableH)));
       setDigitHeight(dh);
-      setDateFontSize(Math.max(10, Math.min(15, dh * 0.22)));
+      setDateFontSize(Math.max(9, Math.min(14, dh * 0.20)));
     };
     const observer = new ResizeObserver(calc);
     observer.observe(containerRef.current);
@@ -117,12 +118,16 @@ export const DateTimeWidget: React.FC = () => {
       </div>
 
       <div
-        className="font-mono text-center whitespace-nowrap"
+        className="font-mono text-center w-full px-2"
         style={{
           fontSize: dateFontSize,
           color: 'var(--color-muted)',
           letterSpacing: '0.04em',
           marginTop: digitHeight * 0.28,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          lineHeight: 1.3,
         }}
       >
         {dateString}
