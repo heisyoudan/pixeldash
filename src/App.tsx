@@ -27,7 +27,7 @@ import { AppProvider, useAppContext } from '@/contexts/AppContext';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const GLITCH_CHARS = '!@#$%^&*_+-=[]{}|;:<>?/~';
-const LABEL = '~/CSir.info';
+const LABEL = '~/dAn';
 
 function Attribution() {
   const [display, setDisplay] = useState('');
@@ -172,6 +172,7 @@ function AppContent() {
           onClose={() => setIsThemeMakerOpen(false)}
         />
       )}
+
 
       <div className="w-full z-10 relative px-2">
         <ResponsiveGridLayout
