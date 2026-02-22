@@ -30,10 +30,25 @@ export const useWeather = () => {
           try {
             const geoRes = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
             const geoData = await geoRes.json();
+            // Prefer city > locality > principalSubdivision > countryName
             if (geoData.city) resolvedCity = geoData.city;
             else if (geoData.locality) resolvedCity = geoData.locality;
-          } catch (e) { /* ignore */ }
+            else if (geoData.principalSubdivision) resolvedCity = geoData.principalSubdivision;
+            else if (geoData.countryName) resolvedCity = geoData.countryName;
+          } catch (e) {
+            // ignore
+          }
         }
+
+        // If still unknown, show coordinates so UI isn't just "Unknown"
+        if (!resolvedCity || resolvedCity === 'Unknown') {
+          try {
+            resolvedCity = `${Number(lat).toFixed(2)}, ${Number(lon).toFixed(2)}`;
+          } catch (e) {
+            // keep Unknown if formatting fails
+          }
+        }
+
         return resolvedCity;
       })();
 
