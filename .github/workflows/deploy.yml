@@ -45,6 +45,8 @@ jobs:
 
   # Deployment job
   deploy:
+    environment:
+      name: pages
     runs-on: ubuntu-latest
     needs: build
     steps:
