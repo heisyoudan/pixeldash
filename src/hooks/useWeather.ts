@@ -30,13 +30,16 @@ export const useWeather = () => {
           try {
             const geoRes = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
             const geoData = await geoRes.json();
+            // debug output to help diagnose missing city names
+            try { console.debug && console.debug('reverse-geocode response', geoData); } catch (e) { /* ignore */ }
+
             // Prefer city > locality > principalSubdivision > countryName
             if (geoData.city) resolvedCity = geoData.city;
             else if (geoData.locality) resolvedCity = geoData.locality;
             else if (geoData.principalSubdivision) resolvedCity = geoData.principalSubdivision;
             else if (geoData.countryName) resolvedCity = geoData.countryName;
           } catch (e) {
-            // ignore
+            try { console.debug && console.debug('reverse-geocode failed', e); } catch (err) { /* ignore */ }
           }
         }
 
@@ -48,6 +51,8 @@ export const useWeather = () => {
             // keep Unknown if formatting fails
           }
         }
+
+        try { console.debug && console.debug('resolvedCity (final)', resolvedCity); } catch (e) { /* ignore */ }
 
         return resolvedCity;
       })();
