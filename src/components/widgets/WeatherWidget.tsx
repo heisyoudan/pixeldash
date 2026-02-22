@@ -70,6 +70,20 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ mode = 'standard',
   }
 
   // --- Icon Mode Render ---
+  // Normalize location display to prefer city name only
+  const getCityDisplay = (name?: string) => {
+    if (!name) return '';
+    const coordRe = /^\s*-?\d+(?:\.\d+)?,\s*-?\d+(?:\.\d+)?\s*$/;
+    if (coordRe.test(name)) return '';
+    const parts = name.split(',').map(p => p.trim()).filter(Boolean);
+    if (parts.length === 0) return '';
+    if (parts.length === 1) return parts[0];
+    const last = parts[parts.length - 1];
+    // If last part is short (e.g. country code / state like 'CA'), prefer the first part
+    if (last.length <= 3) return parts[0];
+    return last;
+  };
+
   if (mode === 'icon') {
     return (
       <div ref={containerRef} className="h-full w-full select-none overflow-hidden bg-[var(--color-bg)] p-4">
@@ -78,7 +92,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ mode = 'standard',
           {/* Row 1: City Name & Temp Side by Side */}
           <div className="col-span-1 flex items-center justify-start">
             <span className="text-[var(--color-fg)] font-bold text-lg tracking-tight truncate" title={data.locationName}>
-              {data.locationName}
+              {getCityDisplay(data.locationName)}
             </span>
           </div>
 
@@ -155,7 +169,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ mode = 'standard',
         {/* Right: location (top) + condition (bottom), fills same height as temp */}
         <div className="flex flex-col justify-between min-w-0 py-0.5">
           <div className="text-[var(--color-fg)] font-mono text-sm truncate leading-tight">
-            {data.locationName}
+            {getCityDisplay(data.locationName)}
           </div>
           <div className="text-[var(--color-muted)] text-sm lowercase leading-tight truncate">
             {data.current.condition}
