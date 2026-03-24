@@ -370,7 +370,7 @@ export const LINKS_DATA: LinkGroup[] = [
     links: [
       { label: 'chatgpt', url: 'https://chat.openai.com', icon: 'https://www.google.com/s2/favicons?domain=openai.com&sz=64' },
       { label: 'gemini', url: 'https://gemini.google.com', icon: 'https://www.google.com/s2/favicons?domain=google.com&sz=64' },
-      { label: 'claude', url: 'https://claude.ai', icon: 'https://www.google.com/s2/favicons?domain=claude.ai&sz=64' },
+      { label: 'stitch', url: 'https://stitch.withgoogle.com/', icon: 'https://www.google.com/s2/favicons?domain=stitch.withgoogle.com&sz=64' },
       { label: 'grok', url: 'https://grok.com', icon: 'https://www.google.com/s2/favicons?domain=grok.com&sz=64' },
     ]
   },
@@ -388,7 +388,7 @@ export const LINKS_DATA: LinkGroup[] = [
     links: [
       { label: 'YFSP', url: 'https://www.yfsp.tv/', icon: 'https://www.google.com/s2/favicons?domain=yfsp.tv&sz=64' },
       { label: 'Bilibili', url: 'https://www.bilibili.com/', icon: 'https://www.google.com/s2/favicons?domain=bilibili.com&sz=64' },
-      { label: 'twitter', url: 'https://twitter.com', icon: 'https://www.google.com/s2/favicons?domain=twitter.com&sz=64' },
+      { label: '𝕏', url: 'https://twitter.com', icon: 'https://www.google.com/s2/favicons?domain=twitter.com&sz=64' },
       { label: 'youtube', url: 'https://www.youtube.com', icon: 'https://www.google.com/s2/favicons?domain=youtube.com&sz=64' },
     ]
   }
