@@ -359,19 +359,19 @@ export const LINKS_DATA: LinkGroup[] = [
   {
     category: 'work',
     links: [
-      { label: 'gmail', url: 'https://gmail.com', icon: 'https://www.google.com/s2/favicons?domain=gmail.com&sz=64' },
-      { label: 'yahoo', url: 'https://mail.yahoo.com/n/folders/1?.src=ym&reason=novation', icon: 'https://www.google.com/s2/favicons?domain=yahoo.com&sz=64' },
-      { label: 'codex', url: 'https://chatgpt.com/codex/settings/usage', icon: 'https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64' },
-      { label: 'github', url: 'https://github.com', icon: 'https://www.google.com/s2/favicons?domain=github.com&sz=64' },
+      { label: 'Gmail', url: 'https://gmail.com', icon: 'https://www.google.com/s2/favicons?domain=gmail.com&sz=64' },
+      { label: 'Yahoo', url: 'https://mail.yahoo.com/n/folders/1?.src=ym&reason=novation', icon: 'https://www.google.com/s2/favicons?domain=yahoo.com&sz=64' },
+      { label: 'Codex', url: 'https://chatgpt.com/codex/settings/usage', icon: 'https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64' },
+      { label: 'GitHub', url: 'https://github.com', icon: 'https://www.google.com/s2/favicons?domain=github.com&sz=64' },
     ]
   },
   {
     category: 'ai',
     links: [
-      { label: 'chatgpt', url: 'https://chat.openai.com', icon: 'https://www.google.com/s2/favicons?domain=openai.com&sz=64' },
-      { label: 'gemini', url: 'https://gemini.google.com', icon: 'https://www.google.com/s2/favicons?domain=google.com&sz=64' },
-      { label: 'stitch', url: 'https://stitch.withgoogle.com/', icon: 'https://www.google.com/s2/favicons?domain=stitch.withgoogle.com&sz=64' },
-      { label: 'grok', url: 'https://grok.com', icon: 'https://www.google.com/s2/favicons?domain=grok.com&sz=64' },
+      { label: 'ChatGPT', url: 'https://chat.openai.com', icon: 'https://www.google.com/s2/favicons?domain=openai.com&sz=64' },
+      { label: 'Gemini', url: 'https://gemini.google.com', icon: 'https://www.google.com/s2/favicons?domain=google.com&sz=64' },
+      { label: 'Deepseek', url: 'https://platform.deepseek.com/usage', icon: 'https://www.google.com/s2/favicons?domain=platform.deepseek.com&sz=64' },
+      { label: 'Grok', url: 'https://grok.com', icon: 'https://www.google.com/s2/favicons?domain=grok.com&sz=64' },
     ]
   },
   {
@@ -387,9 +387,9 @@ export const LINKS_DATA: LinkGroup[] = [
     category: 'media',
     links: [
       { label: 'YFSP', url: 'https://www.yfsp.tv/', icon: 'https://www.google.com/s2/favicons?domain=yfsp.tv&sz=64' },
-      { label: 'Bilibili', url: 'https://www.bilibili.com/', icon: 'https://www.google.com/s2/favicons?domain=bilibili.com&sz=64' },
+      { label: 'Netflix', url: 'https://www.netflix.com/browse', icon: 'https://www.google.com/s2/favicons?domain=netflix.com&sz=64' },
       { label: '𝕏', url: 'https://twitter.com', icon: 'https://www.google.com/s2/favicons?domain=twitter.com&sz=64' },
-      { label: 'youtube', url: 'https://www.youtube.com', icon: 'https://www.google.com/s2/favicons?domain=youtube.com&sz=64' },
+      { label: 'YouTube', url: 'https://www.youtube.com', icon: 'https://www.google.com/s2/favicons?domain=youtube.com&sz=64' },
     ]
   }
 ];
