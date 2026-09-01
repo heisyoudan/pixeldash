@@ -23,7 +23,7 @@ export const LinksWidget: React.FC<LinksWidgetProps> = ({ groups, openInNewTab =
     return (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 h-full px-4 pt-2">
             {groups.map((group) => (
-                <div key={group.category} className={`${animatedLinks ? 'link-group' : ''} flex flex-col gap-1.5 min-w-0`}>
+                <div key={group.category} className={`relative ${animatedLinks ? 'link-group' : ''} group flex flex-col gap-1.5 min-w-0`}>
                     <h4 className="text-xs font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5">
                         <span className={`${animatedLinks ? 'category-prefix' : ''} text-[var(--color-accent)] opacity-60`}>//</span>
                         <span className="category-text text-[var(--color-muted)]">
@@ -57,6 +57,8 @@ export const LinksWidget: React.FC<LinksWidgetProps> = ({ groups, openInNewTab =
                             </a>
                         ))}
                     </div>
+                    {/* bottom mask: hide partially visible icons when not hovered; removed on hover so scroll is visible */}
+                    <div className="absolute left-0 right-0 bottom-0 h-4 pointer-events-none bg-[var(--color-bg)] group-hover:hidden" />
                 </div>
             ))}
             {groups.length === 0 && (
