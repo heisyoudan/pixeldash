@@ -386,10 +386,11 @@ export const LINKS_DATA: LinkGroup[] = [
   {
     category: 'media',
     links: [
-      { label: 'YFSP', url: 'https://www.yfsp.tv/', icon: 'https://www.google.com/s2/favicons?domain=yfsp.tv&sz=64' },
+      { label: 'PrimeVideo', url: 'https://www.primevideo.com/region/fe/search?ie=UTF8&ref_=atv_nb_sug&phrase=%E9%A6%96%E5%B8%AD%E5%A5%B3%E6%B3%95%E5%8C%BB', icon: 'https://www.google.com/s2/favicons?domain=primevideo.com&sz=64' },
       { label: 'Netflix', url: 'https://www.netflix.com/browse', icon: 'https://www.google.com/s2/favicons?domain=netflix.com&sz=64' },
       { label: '𝕏', url: 'https://twitter.com', icon: 'https://www.google.com/s2/favicons?domain=twitter.com&sz=64' },
       { label: 'YouTube', url: 'https://www.youtube.com', icon: 'https://www.google.com/s2/favicons?domain=youtube.com&sz=64' },
+      { label: 'YFSP', url: 'https://www.yfsp.tv/', icon: 'https://www.google.com/s2/favicons?domain=yfsp.tv&sz=64' },
     ]
   }
 ];

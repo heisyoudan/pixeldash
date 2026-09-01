@@ -135,6 +135,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     const [isThemeMakerOpen, setIsThemeMakerOpen] = useState(false);
 
     const [todos, setTodos] = useStickyState<TodoItem[]>([], 'tui-todos');
+    // Use sticky state (localStorage) so linkGroups can be edited locally via the settings or DevTools.
     const [linkGroups, setLinkGroups] = useStickyState<LinkGroup[]>(LINKS_DATA, 'tui-links');
     const [customCss, setCustomCss] = useStickyState<string>('', 'tui-custom-css');
     const [statsMode, setStatsMode] = useStickyState<'text' | 'graph' | 'detailed' | 'minimal'>('minimal', 'tui-stats-mode');
