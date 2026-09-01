@@ -58,7 +58,7 @@ export const LinksWidget: React.FC<LinksWidgetProps> = ({ groups, openInNewTab =
                         ))}
                     </div>
                     {/* bottom mask: hide partially visible icons when not hovered; removed on hover so scroll is visible */}
-                    <div className="absolute left-0 right-0 bottom-0 h-4 pointer-events-none bg-[var(--color-bg)] group-hover:hidden" />
+                    <div className="absolute left-0 right-0 bottom-0 h-6 pointer-events-none z-10 bg-gradient-to-b from-transparent to-[var(--color-bg)] opacity-100 group-hover:opacity-0 transition-opacity duration-200" />
                 </div>
             ))}
             {groups.length === 0 && (
